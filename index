@@ -1,0 +1,41 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My CV</title>
+</head>
+
+<body>
+
+    <h1>My CV</h1>
+
+    <h2>About Me</h2>
+    <p>
+        Hello! My name is Leo. I am a university student
+        interested in web development and cybersecurity.
+    </p>
+
+    <h2>My Skills</h2>
+    <ul>
+        <li>HTML5</li>
+        <li>CSS Basics</li>
+        <li>Git & GitHub</li>
+        <li>Programming</li>
+    </ul>
+
+    <h2>Education</h2>
+    <p>
+        Mongolian University of Science and Technology
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+        GitHub:
+        <a href="https://github.com/">My GitHub Profile</a>
+    </p>
+
+</body>
+</html>
+```
