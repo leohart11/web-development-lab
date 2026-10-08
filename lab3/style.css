@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #0d0d0d;
+    color: #e5e5e5;
+}
+
+/* Header */
+
+header {
+    background: #111111;
+    border-bottom: 2px solid #e00000;
+    padding: 25px;
+    text-align: center;
+}
+
+.title {
+    margin: 0;
+    color: #ffffff;
+}
+
+/* Navigation */
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+nav a {
+    color: #bbbbbb;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #e00000;
+}
+
+/* Main */
+
+main {
+    max-width: 900px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+article {
+    background: #151515;
+    padding: 30px;
+    border: 1px solid #292929;
+    border-radius: 10px;
+}
+
+/* Form container */
+
+.form-container {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.form-container h2 {
+    color: #ffffff;
+}
+
+.badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #e00000;
+    color: #ffffff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+/* Form */
+
+.form-box {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #333333;
+    border-radius: 8px;
+}
+
+legend {
+    color: #ff2222;
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 11px;
+    margin: 8px 0 15px;
+    border: 1px solid #3a3a3a;
+    border-radius: 6px;
+    background: #0f0f0f;
+    color: #ffffff;
+    font-family: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #e00000;
+}
+
+/* Radio / checkbox */
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+    margin: 5px;
+}
+
+/* Buttons */
+
+.submit-btn,
+.reset-btn {
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+}
+
+.submit-btn {
+    background: #e00000;
+    color: white;
+    border: 1px solid #e00000;
+}
+
+.submit-btn:hover {
+    background: #b00000;
+}
+
+.reset-btn {
+    background: transparent;
+    color: #cccccc;
+    border: 1px solid #555555;
+}
+
+.reset-btn:hover {
+    border-color: #e00000;
+    color: #ffffff;
+}
+
+/* Interest list */
+
+li {
+    margin: 8px 0;
+}
+
+/* Table */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th,
+td {
+    padding: 12px;
+    border: 1px solid #333333;
+    text-align: left;
+}
+
+th {
+    background: #e00000;
+    color: white;
+}
+
+td {
+    background: #111111;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111111;
+    border-top: 1px solid #292929;
+    color: #888888;
+    margin-top: 30px;
+}

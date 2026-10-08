@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="mn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Н.Лхагваням - Оюутны анкет</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1 class="title">Оюутны Бүртгэлийн Портал</h1>
+
+        <nav>
+            <ul>
+                <li><a href="../index.html">Нүүр</a></li>
+                <li><a href="#">Анкет</a></li>
+                <li><a href="#">Тусламж</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <article>
+
+            <section>
+
+                <div class="form-container">
+
+                    <span class="badge">LAB 3</span>
+
+                    <h2>Н.Лхагваням - Хэрэглэгчийн анкет</h2>
+
+                    <p>
+                        Доорх формын дагуу мэдээллээ бүрэн,
+                        үнэн зөв бөглөнө үү.
+                    </p>
+
+                </div>
+
+                <form action="#" method="POST" enctype="multipart/form-data">
+
+                    <fieldset class="form-box">
+                        <legend>Хувийн мэдээлэл</legend>
+
+                        <label for="fullname">Овог нэр:</label><br>
+                        <input
+                            type="text"
+                            id="fullname"
+                            name="fullname"
+                            placeholder="Н.Лхагваням"
+                            required
+                            minlength="2"
+                        >
+
+                        <label for="email">Цахим хаяг:</label><br>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="example@gmail.com"
+                            required
+                        >
+
+                        <label for="password">Нууц үг:</label><br>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            required
+                            minlength="6"
+                        >
+
+                        <label for="phone">Утасны дугаар:</label><br>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="88112233"
+                            pattern="[0-9]{8}"
+                            required
+                        >
+
+                        <label for="birthdate">Төрсөн огноо:</label><br>
+                        <input
+                            type="date"
+                            id="birthdate"
+                            name="birthdate"
+                            required
+                        >
+
+                        <label>Хүйс:</label><br>
+
+                        <input
+                            type="radio"
+                            id="male"
+                            name="gender"
+                            value="male"
+                        >
+                        <label for="male">Эрэгтэй</label>
+
+                        <input
+                            type="radio"
+                            id="female"
+                            name="gender"
+                            value="female"
+                        >
+                        <label for="female">Эмэгтэй</label>
+
+                    </fieldset>
+
+                    <fieldset class="form-box">
+
+                        <legend>Боловсрол ба сонирхол</legend>
+
+                        <label for="degree">
+                            Суралцаж буй түвшин:
+                        </label>
+                        <br>
+
+                        <select id="degree" name="degree" required>
+                            <option value="">-- Сонгоно уу --</option>
+                            <option value="bachelor">Бакалавр</option>
+                            <option value="master">Магистр</option>
+                            <option value="doctor">Докторант</option>
+                        </select>
+
+                        <label>Сонирхож буй технологи:</label><br>
+
+                        <input
+                            type="checkbox"
+                            id="html"
+                            name="skills"
+                            value="HTML"
+                        >
+                        <label for="html">HTML / CSS</label>
+                        <br>
+
+                        <input
+                            type="checkbox"
+                            id="javascript"
+                            name="skills"
+                            value="JavaScript"
+                        >
+                        <label for="javascript">JavaScript</label>
+                        <br>
+
+                        <input
+                            type="checkbox"
+                            id="python"
+                            name="skills"
+                            value="Python"
+                        >
+                        <label for="python">Python</label>
+
+                        <br><br>
+
+                        <label for="photo">Профайл зураг:</label><br>
+                        <input
+                            type="file"
+                            id="photo"
+                            name="photo"
+                            accept="image/*"
+                        >
+
+                        <label for="about">Өөрийн тухай:</label><br>
+                        <textarea
+                            id="about"
+                            name="about"
+                            rows="5"
+                            cols="40"
+                            placeholder="Өөрийн тухай товч бичнэ үү..."
+                        ></textarea>
+
+                    </fieldset>
+
+                    <button class="submit-btn" type="submit">
+                        Анкет илгээх
+                    </button>
+
+                    <button class="reset-btn" type="reset">
+                        Дахин эхлүүлэх
+                    </button>
+
+                </form>
+
+            </section>
+
+            <section>
+
+                <h2>Миний сонирхол</h2>
+
+                <ul>
+                    <li>Вэб хөгжүүлэлт</li>
+                    <li>Кибер аюулгүй байдал</li>
+                    <li>Программчлал</li>
+                </ul>
+
+            </section>
+
+            <section>
+
+                <h2>Миний дүн</h2>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Хичээл</th>
+                            <th>Дүн</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Физик</td>
+                            <td>90</td>
+                        </tr>
+
+                        <tr>
+                            <td>Программчлалийн үндэс</td>
+                            <td>99</td>
+                        </tr>
+
+                        <tr>
+                            <td>Математик</td>
+                            <td>95</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+        </article>
+
+    </main>
+
+    <footer>
+        <p>
+            &copy; 2026 Веб зохиомж хичээл. Бүх эрх хуулиар хамгаалагдсан.
+        </p>
+    </footer>
+
+</body>
+
+</html>
