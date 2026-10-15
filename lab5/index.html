@@ -10,6 +10,36 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+
+<script>
+    const preview = document.getElementById("sitePreview");
+    const viewButtons = document.querySelectorAll("[data-view]");
+
+    viewButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const view = button.dataset.view;
+
+            preview.classList.remove(
+                "mobile-view",
+                "tablet-view",
+                "desktop-view"
+            );
+
+            preview.classList.add(view + "-view");
+
+            viewButtons.forEach((item) => {
+                const selected = item === button;
+                item.classList.toggle("active", selected);
+                item.setAttribute("aria-pressed", selected);
+            });
+        });
+    });
+
+    document.querySelector('[data-view="desktop"]').click();
+</script>
+</body>
+
+
 <body>
 
     <header>
@@ -198,6 +228,12 @@
                     <li>Вэб хөгжүүлэлт</li>
                     <li>Кибер аюулгүй байдал</li>
                     <li>Программчлал</li>
+                    <li>Хөгжим</li>
+                    <li>Видео тоглоом</li>
+                    <li>Уран зураг</li>
+
+
+
                 </ul>
 
             </section>
@@ -249,5 +285,18 @@
     </footer>
 
 </body>
+<div class="preview-toolbar">
+    <span>Дэлгэцийн хэмжээ: </span>
+    <button type=""button" data-view="mobile" aria-pressed="false">
+        Mobile
+    </button>
+    <button type=""button" data-view="tablet" aria-pressed="false">
+        Tablet
+    </button>
+    <button type=""button" data-view="desktop" aria-pressed="true">
+        Desktop
+    </button>
+    </span>
+</div>
 
 </html>
