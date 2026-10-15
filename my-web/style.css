@@ -82,22 +82,17 @@ main {
     padding: 32px 24px;
 }
 
+
+/* Main layout */
 article {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(240px, 300px);
+    grid-template-columns: minmax(0, 1fr);
     grid-template-areas:
-        "form interests"
-        "form grades";
+        "form"
+        "interests"
+        "grades";
     gap: 24px;
     align-items: start;
-}
-
-article > section {
-    min-width: 0;
-    padding: 24px;
-    background: #1a1a1a;
-    border: 1px solid #333;
-    border-radius: 12px;
 }
 
 article > section:first-child {
@@ -111,6 +106,31 @@ article > section:nth-child(2) {
 article > section:nth-child(3) {
     grid-area: grades;
 }
+
+/* 6 cards: desktop дээр 3 багана */
+article > section:nth-child(2) ul {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* Tablet: 2 багана */
+@media (min-width: 601px) and (max-width: 900px) {
+    article > section:nth-child(2) ul {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Mobile: 1 багана */
+@media (max-width: 600px) {
+    article > section:nth-child(2) ul {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
 
 h2 {
     margin-top: 0;
