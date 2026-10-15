@@ -1,4 +1,7 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ===== GENERAL ===== */
 
 * {
     box-sizing: border-box;
@@ -10,259 +13,290 @@ html {
 
 body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #0d0d0d;
-    color: #e5e5e5;
+    font-family: 'Poppins', Arial, sans-serif;
+    background: #101010;
+    color: #f5f5f5;
     line-height: 1.6;
 }
 
-/* header*/
+img {
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+/* ===== HEADER ===== */
+
 header {
-    background: #111;
-    text-align: center;
-    padding: 30px 20px;
-    border-bottom: 2px solid #e00000;
+    background: #181818;
+    border-bottom: 3px solid #e63946;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
 }
 
 .title {
     margin: 0;
-    color: #fff;
-    font-size: 28px;
+    color: #ff4655;
+    font-size: 1.6rem;
 }
 
-/*navigation*/
-nav {
-    background: #151515;
-}
+/* ===== NAVIGATION - FLEXBOX ===== */
 
 nav ul {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 30px;
-
-    list-style: none;
+    gap: 12px;
+    padding: 0;
     margin: 0;
-    padding: 16px 20px;
+    list-style: none;
 }
 
 nav a {
-    color: #ccc;
+    display: block;
+    padding: 9px 16px;
+    color: #f5f5f5;
     text-decoration: none;
-    transition: color 0.2s;
+    border-radius: 6px;
+    transition: background 0.2s ease;
 }
 
-nav a:hover {
-    color: #ff2222;
+nav a:hover,
+nav a:focus-visible {
+    background: #e63946;
 }
 
-/*main*/
+/* ===== MAIN LAYOUT ===== */
+
 main {
-    max-width: 1100px;
-    margin: 35px auto;
-    padding: 0 20px;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 32px 24px;
 }
 
 article {
     display: grid;
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 300px);
+    grid-template-areas:
+        "form interests"
+        "form grades";
     gap: 24px;
+    align-items: start;
 }
 
-/*card*/
 article > section {
     min-width: 0;
-    padding: 25px;
-    background: #151515;
-    border: 1px solid #303030;
+    padding: 24px;
+    background: #1a1a1a;
+    border: 1px solid #333;
     border-radius: 12px;
 }
 
+article > section:first-child {
+    grid-area: form;
+}
+
+article > section:nth-child(2) {
+    grid-area: interests;
+}
+
+article > section:nth-child(3) {
+    grid-area: grades;
+}
+
 h2 {
-    color: #fff;
     margin-top: 0;
+    color: #ff4655;
+    font-size: 1.3rem;
 }
 
-h2::after {
-    content: "";
-    display: block;
-    width: 45px;
-    height: 3px;
-    margin-top: 8px;
-    background: #e00000;
-    border-radius: 3px;
-}
+/* ===== FORM INTRODUCTION ===== */
 
-/*form head*/
 .form-container {
     position: relative;
-    margin-bottom: 25px;
-    padding-right: 80px;
+    margin-bottom: 24px;
 }
 
 .form-container p {
-    color: #aaa;
+    color: #bbb;
 }
 
+/* ===== FORM FIELDS ===== */
 
-/*form field*/
 .form-box {
     min-width: 0;
-    margin: 20px 0;
-    padding: 22px;
-    border: 1px solid #383838;
-    border-radius: 10px;
+    margin: 0 0 20px;
+    padding: 20px;
+    border: 1px solid #444;
+    border-radius: 8px;
 }
 
-legend {
+.form-box legend {
     padding: 0 8px;
-    color: #ff3333;
+    color: #ff6570;
     font-weight: 600;
 }
 
-label {
-    color: #ddd;
+.form-box label {
+    display: inline-block;
+    margin: 8px 0 5px;
 }
 
-input:not([type="radio"]):not([type="checkbox"]),
-select,
-textarea {
+.form-box input:not([type="radio"]):not([type="checkbox"]):not([type="file"]),
+.form-box select,
+.form-box textarea {
     display: block;
     width: 100%;
     max-width: 100%;
-    margin: 8px 0 18px;
-    padding: 12px;
-
-    color: #fff;
-    background: #0f0f0f;
-    border: 1px solid #383838;
-    border-radius: 7px;
-
+    min-width: 0;
+    padding: 11px 12px;
+    margin-bottom: 12px;
     font: inherit;
+    color: #f5f5f5;
+    background: #101010;
+    border: 1px solid #444;
+    border-radius: 6px;
 }
 
-input:focus,
-select:focus,
-textarea:focus {
-    outline: none;
-    border-color: #e00000;
+.form-box input[type="radio"],
+.form-box input[type="checkbox"] {
+    accent-color: #e63946;
 }
 
-input[type="radio"],
-input[type="checkbox"] {
-    accent-color: #e00000;
-}
-
-input[type="file"] {
-    font-size: 13px;
-}
-
-textarea {
+.form-box textarea {
     resize: vertical;
 }
 
-/*button*/
-.submit-btn,
-.reset-btn {
-    padding: 11px 20px;
-    margin: 5px 8px 5px 0;
-    border-radius: 7px;
-    font: inherit;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.2s;
+.form-box input:focus,
+.form-box select:focus,
+.form-box textarea:focus {
+    outline: 2px solid #e63946;
+    outline-offset: 1px;
 }
 
-.submit-btn {
-    background: #e00000;
-    color: #fff;
-    border: 1px solid #e00000;
+/* ===== BUTTONS ===== */
+
+.submit-btn,
+.reset-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    margin: 5px 8px 5px 0;
+    font: inherit;
+    font-weight: 600;
+    color: white;
+    background: #e63946;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
 }
 
 .submit-btn:hover {
-    background: #b80000;
+    background: #c92533;
 }
 
 .reset-btn {
-    background: transparent;
-    color: #ddd;
+    background: #333;
     border: 1px solid #555;
 }
 
 .reset-btn:hover {
-    border-color: #e00000;
-    color: #fff;
+    background: #444;
 }
 
-/*card-grid*/
+/* ===== INTEREST CARDS - CSS GRID ===== */
+
 article > section:nth-child(2) ul {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 15px;
-
-    list-style: none;
+    gap: 12px;
     padding: 0;
-    margin: 20px 0 0;
+    margin: 0;
+    list-style: none;
 }
 
 article > section:nth-child(2) li {
     min-width: 0;
-    padding: 18px;
-    background: #202020;
-    border: 1px solid #333;
-    border-left: 3px solid #e00000;
-    border-radius: 8px;
+    padding: 16px 12px;
+    background: #242424;
+    border-left: 3px solid #e63946;
+    border-radius: 6px;
     overflow-wrap: anywhere;
-    transition: 0.2s;
 }
 
-article > section:nth-child(2) li:hover {
-    background: #292020;
-    transform: translateY(-3px);
-}
+/* ===== GRADES TABLE ===== */
 
-/*dungiin husnegt*/
 table {
     width: 100%;
-    margin-top: 20px;
     border-collapse: collapse;
+    table-layout: fixed;
 }
 
 th,
 td {
-    padding: 13px;
-    border: 1px solid #333;
+    padding: 12px 10px;
     text-align: left;
+    border-bottom: 1px solid #393939;
+    overflow-wrap: anywhere;
 }
 
 th {
-    background: #e00000;
-    color: white;
+    color: #ff6570;
+    background: #242424;
 }
 
-td {
-    background: #111;
+tbody tr:hover {
+    background: #242424;
 }
 
-tbody tr:hover td {
-    background: #242020;
+/* ===== SIDEBAR CONTENT ===== */
+
+article > section:nth-child(2) li,
+article > section:nth-child(3) td {
+    line-height: 1.6;
 }
 
-/*footer*/
+/* ===== FOOTER ===== */
+
 footer {
-    padding: 22px;
-    margin-top: 35px;
+    margin-top: 24px;
+    padding: 24px 16px;
     text-align: center;
-    color: #888;
-    background: #111;
-    border-top: 1px solid #303030;
+    color: #aaa;
+    background: #181818;
+    border-top: 2px solid #e63946;
 }
 
-/*tablet*/
-@media (max-width: 800px) {
-    main {
-        margin: 25px auto;
+footer p {
+    margin: 0;
+}
+
+/* ===== TABLET ===== */
+
+@media (max-width: 900px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    article {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-areas:
+            "form form"
+            "interests grades";
+        gap: 18px;
     }
 
     article > section {
@@ -274,47 +308,56 @@ footer {
     }
 }
 
-/*monile*/
-@media (max-width: 550px) {
+/* ===== MOBILE ===== */
+
+@media (max-width: 600px) {
     header {
-        padding: 24px 15px;
+        padding: 18px 14px;
+        flex-direction: column;
+        gap: 14px;
     }
 
     .title {
-        font-size: 22px;
+        font-size: 1.3rem;
+        text-align: center;
     }
 
     nav ul {
         flex-direction: column;
-        gap: 10px;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    nav a {
+        padding: 10px;
+        background: #242424;
     }
 
     main {
-        margin: 18px auto;
-        padding: 0 12px;
+        padding: 18px 12px;
     }
 
     article {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "form"
+            "interests"
+            "grades";
         gap: 16px;
     }
 
     article > section {
         padding: 16px;
-        border-radius: 9px;
-    }
-
-    .form-container {
-        padding-right: 0;
-    }
-
-    .badge {
-        position: static;
-        display: inline-block;
-        margin-bottom: 12px;
     }
 
     .form-box {
         padding: 14px;
+    }
+
+    .submit-btn,
+    .reset-btn {
+        width: 100%;
+        margin: 6px 0;
     }
 
     article > section:nth-child(2) ul {
@@ -323,14 +366,7 @@ footer {
 
     th,
     td {
-        padding: 9px;
-        font-size: 13px;
-        overflow-wrap: anywhere;
-    }
-
-    .submit-btn,
-    .reset-btn {
-        width: 100%;
-        margin: 6px 0;
+        padding: 9px 6px;
+        font-size: 0.85rem;
     }
 }
