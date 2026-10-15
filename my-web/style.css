@@ -84,10 +84,11 @@ main {
 
 article {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(240px, 300px);
+    grid-template-columns: minmax(0, 1fr);
     grid-template-areas:
-        "form interests"
-        "form grades";
+        "form"
+        "interests"
+        "grades";
     gap: 24px;
     align-items: start;
 }
