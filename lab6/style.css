@@ -1,0 +1,1165 @@
+/* =========================================
+   HARANGA — DESIGN TOKENS
+========================================= */
+
+:root {
+  --bg: #101010;
+  --surface: #191919;
+  --surface-2: #242020;
+  --text: #f5f5f5;
+  --muted: #b5b5b5;
+  --accent: #e63946;
+  --accent-bright: #ff5964;
+  --border: #383838;
+  --header-bg: rgba(12, 12, 12, 0.92);
+  --shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+  --radius: 14px;
+  --content-width: 1200px;
+  --transition: 250ms ease;
+}
+
+body.light-theme {
+  --bg: #f1eeee;
+  --surface: #ffffff;
+  --surface-2: #f6e9e9;
+  --text: #191313;
+  --muted: #5d5555;
+  --accent: #b91f2b;
+  --accent-bright: #d42b38;
+  --border: #d7caca;
+  --header-bg: rgba(255, 255, 255, 0.94);
+  --shadow: 0 18px 45px rgba(30, 0, 0, 0.12);
+}
+
+/* =========================================
+   RESET & GLOBAL
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  transition:
+    background var(--transition),
+    color var(--transition);
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  object-fit: cover;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a,
+.member-card,
+.album-card {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+.member-card:focus-visible,
+.album-card:focus-visible {
+  outline: 3px solid var(--accent-bright);
+  outline-offset: 4px;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* =========================================
+   HEADER & NAVIGATION
+========================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  min-height: 78px;
+  padding: 12px max(5%, calc((100% - var(--content-width)) / 2));
+
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(14px);
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  line-height: 1.1;
+}
+
+.logo span,
+.footer-logo {
+  color: var(--accent-bright);
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.logo small {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 0.58rem;
+  letter-spacing: 1.5px;
+}
+
+.site-header nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.site-header nav a {
+  position: relative;
+  color: var(--muted);
+  font-size: 0.92rem;
+  transition: color var(--transition);
+}
+
+.site-header nav a::after {
+  position: absolute;
+  right: 0;
+  bottom: -6px;
+  left: 0;
+
+  height: 2px;
+  background: var(--accent);
+  content: "";
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition);
+}
+
+.site-header nav a:hover,
+.site-header nav a:focus-visible {
+  color: var(--text);
+}
+
+.site-header nav a:hover::after,
+.site-header nav a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.theme-toggle {
+  flex-shrink: 0;
+  min-width: 44px;
+  min-height: 44px;
+
+  border: 1px solid var(--border);
+  border-radius: 50%;
+
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+
+  transition:
+    background var(--transition),
+    transform var(--transition);
+}
+
+.theme-toggle:hover {
+  background: var(--accent);
+  transform: rotate(12deg);
+}
+
+/* =========================================
+   COMMON SECTIONS
+========================================= */
+
+section:not(.hero) {
+  padding: 86px 5%;
+  scroll-margin-top: 76px;
+}
+
+.section-heading {
+  max-width: 760px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--accent-bright);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.section-heading h2 {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.15;
+}
+
+.section-heading > p:last-child {
+  color: var(--muted);
+}
+
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;
+  padding: 12px 24px;
+
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+
+  background: var(--accent);
+  color: #fff;
+  font-weight: 800;
+
+  transition:
+    background var(--transition),
+    transform var(--transition);
+}
+
+.primary-btn:hover {
+  background: #b91f2b;
+  transform: translateY(-3px);
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+
+  display: flex;
+  align-items: center;
+
+  min-height: min(760px, calc(100vh - 78px));
+  padding: 90px 8% 105px;
+  overflow: hidden;
+
+  background: #111 url("img/background1.jpg")
+    center 40% / cover no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.92) 0%,
+      rgba(0, 0, 0, 0.62) 55%,
+      rgba(0, 0, 0, 0.25) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.75),
+      transparent 40%
+    );
+}
+
+.hero-content {
+  width: min(720px, 100%);
+  animation: heroEnter 800ms ease both;
+}
+
+.hero-content .eyebrow {
+  margin-bottom: 20px;
+}
+
+.hero-content h1 {
+  margin: 0;
+  color: #fff;
+
+  font-size: clamp(4rem, 12vw, 9rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  line-height: 0.95;
+
+  text-shadow: 0 5px 30px rgba(0, 0, 0, 0.55);
+}
+
+.hero-content h2 {
+  margin: 24px 0 12px;
+  font-size: clamp(1.3rem, 3vw, 2rem);
+}
+
+.hero-content > p:not(.eyebrow) {
+  max-width: 540px;
+  margin-bottom: 28px;
+  color: #dedede;
+  font-size: 1.05rem;
+}
+
+.hero-bottom {
+  position: absolute;
+  right: 8%;
+  bottom: 22px;
+  left: 8%;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+
+  color: #ddd;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* =========================================
+   ABOUT
+========================================= */
+
+.about-section {
+  background:
+    linear-gradient(
+      rgba(16, 16, 16, 0.94),
+      rgba(16, 16, 16, 0.96)
+    ),
+    url("img/background2.jpg") center / cover fixed;
+}
+
+body.light-theme .about-section {
+  background:
+    linear-gradient(
+      rgba(245, 240, 240, 0.94),
+      rgba(245, 240, 240, 0.96)
+    ),
+    url("img/background2.jpg") center / cover;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(28px, 5vw, 64px);
+
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.about-image {
+  min-height: 300px;
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  max-height: 450px;
+
+  transition: transform 500ms ease;
+}
+
+.about-image:hover img {
+  transform: scale(1.04);
+}
+
+.about-text h3 {
+  margin-top: 0;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  line-height: 1.25;
+}
+
+.about-text p {
+  color: var(--muted);
+}
+
+/* =========================================
+   MEMBERS SECTION
+========================================= */
+
+.members-section {
+  background:
+    linear-gradient(
+      rgba(12, 12, 12, 0.9),
+      rgba(12, 12, 12, 0.94)
+    ),
+    url("img/background2.jpg") center / cover;
+}
+
+body.light-theme .members-section {
+  background:
+    linear-gradient(
+      rgba(245, 240, 240, 0.91),
+      rgba(245, 240, 240, 0.95)
+    ),
+    url("img/background2.jpg") center / cover;
+}
+
+/*
+  Carousel layout:
+  Голын карт болон хоёр хажуугийн карт харагдана.
+  JS нь active-member, member-prev, member-next
+  class-уудыг удирдана.
+*/
+
+.members-grid {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  max-width: 1050px;
+  height: 440px;
+  margin: 0 auto;
+
+  overflow: hidden;
+  perspective: 1200px;
+}
+
+.members-grid .member-card {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+
+  display: block;
+  width: min(330px, 68%);
+  height: 410px;
+  margin: 0;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateX(-50%) scale(0.72);
+
+  transition:
+    transform 700ms ease,
+    opacity 700ms ease,
+    visibility 700ms ease;
+
+  z-index: 1;
+}
+
+.members-grid .member-card.active-member {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transform: translateX(-50%) scale(1);
+
+  z-index: 3;
+}
+
+.members-grid .member-card.member-prev {
+  opacity: 0.68;
+  visibility: visible;
+  pointer-events: none;
+
+  transform: translateX(calc(-50% - 245px)) scale(0.78);
+
+  z-index: 2;
+}
+
+.members-grid .member-card.member-next {
+  opacity: 0.68;
+  visibility: visible;
+  pointer-events: none;
+
+  transform: translateX(calc(-50% + 245px)) scale(0.78);
+
+  z-index: 2;
+}
+
+/* Member flip animation */
+
+.member-card {
+  min-width: 0;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.member-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  transform-style: preserve-3d;
+  transition: transform 700ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.member-card.is-flipped .member-card-inner {
+  transform: rotateY(180deg);
+}
+
+.member-front,
+.member-back {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  background: var(--surface);
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.member-front {
+  display: flex;
+  flex-direction: column;
+}
+
+.member-front img {
+  width: 100%;
+  height: 76%;
+  min-height: 0;
+  object-position: center top;
+}
+
+.member-info {
+  flex: 1;
+  padding: 10px 12px;
+  border-top: 2px solid var(--accent);
+}
+
+.member-info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.member-info p {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.flip-hint {
+  position: absolute;
+  top: 12px;
+  right: 10px;
+
+  padding: 4px 8px;
+  border-radius: 4px;
+
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+}
+
+.member-back {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding: 22px;
+  overflow-y: auto;
+  overflow-wrap: anywhere;
+
+  transform: rotateY(180deg);
+
+  background: linear-gradient(
+    145deg,
+    var(--surface-2),
+    var(--surface)
+  );
+
+  border-top: 3px solid var(--accent);
+}
+
+.member-back h3 {
+  flex-shrink: 0;
+  margin: 0 0 10px;
+
+  color: var(--accent-bright);
+  font-size: 1.4rem;
+}
+
+.member-back p {
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.member-back span {
+  display: block;
+  flex-shrink: 0;
+
+  margin-top: auto;
+  padding-top: 14px;
+
+  color: var(--accent-bright);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* =========================================
+   ALBUMS SECTION
+========================================= */
+
+.albums-section {
+  background:
+    linear-gradient(
+      rgba(15, 15, 15, 0.91),
+      rgba(15, 15, 15, 0.96)
+    ),
+    url("img/background2.jpg") center / cover fixed;
+}
+
+body.light-theme .albums-section {
+  background:
+    linear-gradient(
+      rgba(245, 240, 240, 0.93),
+      rgba(245, 240, 240, 0.97)
+    ),
+    url("img/background2.jpg") center / cover;
+}
+
+/* Цомгууд гурвуулаа байрандаа харагдана */
+
+.album-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.album-track {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 22px;
+
+  width: 100%;
+  min-width: 0;
+}
+
+/* Album flip cards */
+
+.album-card {
+  display: block;
+  min-width: 0;
+  height: 440px;
+
+  perspective: 1100px;
+  cursor: pointer;
+}
+
+.album-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  transform-style: preserve-3d;
+  transition: transform 700ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.album-card.is-flipped .album-card-inner {
+  transform: rotateY(180deg);
+}
+
+.album-front,
+.album-back {
+  position: absolute;
+  inset: 0;
+
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  background: var(--surface);
+  box-shadow: var(--shadow);
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.album-front {
+  display: flex;
+  flex-direction: column;
+}
+
+.album-front img {
+  width: 100%;
+  height: 72%;
+  min-height: 0;
+
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.album-info {
+  flex: 1;
+  padding: 12px 16px;
+
+  border-top: 3px solid var(--accent);
+
+  background: linear-gradient(
+    135deg,
+    var(--surface-2),
+    var(--surface)
+  );
+}
+
+.album-info h3 {
+  margin: 0 0 4px;
+  font-size: 1.02rem;
+  line-height: 1.3;
+}
+
+.album-info p {
+  margin: 0;
+  color: var(--accent-bright);
+
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.album-info span {
+  display: block;
+  margin-top: 5px;
+
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.album-back {
+  padding: 22px;
+  overflow-y: auto;
+  overflow-wrap: anywhere;
+
+  transform: rotateY(180deg);
+
+  background: linear-gradient(
+    145deg,
+    var(--surface-2),
+    var(--surface)
+  );
+
+  border-top: 3px solid var(--accent);
+}
+
+.album-back h3 {
+  margin: 0 0 12px;
+  color: var(--accent-bright);
+
+  font-size: 1.15rem;
+  line-height: 1.3;
+}
+
+.track-label {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.album-back ol {
+  margin: 12px 0 0;
+  padding-left: 22px;
+}
+
+.album-back li {
+  padding: 4px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.83rem;
+}
+
+/* Цомгийн Pause Rotation болон сумнуудыг нуух */
+
+#prevAlbum,
+#nextAlbum,
+#rotationToggle,
+.carousel-note {
+  display: none !important;
+}
+
+/* =========================================
+   VIDEO
+========================================= */
+
+.video-section {
+  background: var(--bg);
+}
+
+.video-container {
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  background: #000;
+  box-shadow: var(--shadow);
+}
+
+.video-container video {
+  width: 100%;
+  max-height: 520px;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.video-note {
+  max-width: 900px;
+  margin: 14px auto 0;
+
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.site-footer {
+  padding: 44px 5% 22px;
+
+  border-top: 1px solid var(--border);
+
+  background: #090909;
+  color: #f5f5f5;
+  text-align: center;
+}
+
+.footer-logo {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.site-footer > p {
+  color: #aaa;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 22px;
+
+  margin: 22px 0;
+}
+
+.footer-links a {
+  color: #ccc;
+  transition: color var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--accent-bright);
+}
+
+.site-footer .copyright {
+  margin-top: 28px;
+  padding-top: 18px;
+
+  border-top: 1px solid #292929;
+  font-size: 0.78rem;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes heroEnter {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   RESPONSIVE — TABLET
+========================================= */
+
+@media (max-width: 800px) {
+  .site-header {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 12px 5%;
+  }
+
+  .site-header nav {
+    order: 3;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 10px 20px;
+    padding: 5px 0;
+  }
+
+  .site-header nav a {
+    font-size: 0.85rem;
+  }
+
+  .hero {
+    min-height: 620px;
+    padding: 80px 6% 100px;
+    background-position: 58% center;
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.88),
+        rgba(0, 0, 0, 0.42)
+      ),
+      linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.72),
+        transparent
+      );
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image img {
+    max-height: 360px;
+  }
+
+  /* Гишүүдийн карт хажуу талдаа харагдсаар байна */
+
+  .members-grid {
+    height: 420px;
+  }
+
+  .members-grid .member-card {
+    width: min(300px, 64%);
+    height: 390px;
+  }
+
+  .members-grid .member-card.member-prev {
+    transform: translateX(calc(-50% - 190px)) scale(0.76);
+  }
+
+  .members-grid .member-card.member-next {
+    transform: translateX(calc(-50% + 190px)) scale(0.76);
+  }
+
+  /* Tablet дээр цомгууд гурвуулаа байна */
+
+  .album-track {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .album-card {
+    height: 390px;
+  }
+
+  .album-info {
+    padding: 10px;
+  }
+
+  .album-info h3 {
+    font-size: 0.9rem;
+  }
+
+  .album-back {
+    padding: 14px;
+  }
+
+  .album-back h3 {
+    font-size: 1rem;
+  }
+
+  .album-back li {
+    font-size: 0.76rem;
+  }
+
+  section:not(.hero) {
+    padding: 68px 5%;
+  }
+}
+
+/* =========================================
+   RESPONSIVE — MOBILE
+========================================= */
+
+@media (max-width: 560px) {
+  .logo span,
+  .footer-logo {
+    font-size: 1.35rem;
+  }
+
+  .logo small {
+    font-size: 0.5rem;
+  }
+
+  .site-header nav {
+    gap: 8px 14px;
+  }
+
+  .site-header nav a {
+    font-size: 0.78rem;
+  }
+
+  .hero {
+    min-height: 570px;
+    padding: 70px 6% 100px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(3.6rem, 18vw, 5rem);
+  }
+
+  .hero-content > p:not(.eyebrow) {
+    font-size: 0.95rem;
+  }
+
+  .hero-bottom {
+    right: 6%;
+    left: 6%;
+
+    font-size: 0.57rem;
+    letter-spacing: 1px;
+  }
+
+  /* Mobile дээр голын карт болон хоёр талын хэсэг */
+
+  .members-grid {
+    height: 400px;
+  }
+
+  .members-grid .member-card {
+    top: 10px;
+    width: min(270px, 72%);
+    height: 380px;
+  }
+
+  .members-grid .member-card.member-prev {
+    transform: translateX(calc(-50% - 145px)) scale(0.72);
+  }
+
+  .members-grid .member-card.member-next {
+    transform: translateX(calc(-50% + 145px)) scale(0.72);
+  }
+
+  .member-back {
+    padding: 16px;
+  }
+
+  .member-back h3 {
+    font-size: 1.2rem;
+  }
+
+  .member-back p {
+    font-size: 0.85rem;
+  }
+
+  /* Гар утсан дээр цомгууд босоо байрлалтай */
+
+  .album-track {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 390px;
+    margin: 0 auto;
+  }
+
+  .album-card {
+    height: 420px;
+  }
+
+  .album-info {
+    padding: 12px 16px;
+  }
+
+  .album-info h3 {
+    font-size: 1.02rem;
+  }
+
+  .album-back {
+    padding: 20px;
+  }
+
+  .album-back li {
+    font-size: 0.83rem;
+  }
+
+  section:not(.hero) {
+    padding: 54px 16px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .hero-content {
+    animation: none;
+  }
+
+  .about-image:hover img,
+  .theme-toggle:hover,
+  .primary-btn:hover {
+    transform: none;
+  }
+}

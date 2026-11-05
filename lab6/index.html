@@ -1,0 +1,345 @@
+
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Монголын рок хөгжмийн домог Харанга хамтлагийн тухай.">
+  <title>Харанга | Монголын рок домог</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <header class="site-header">
+    <a class="logo" href="#home" aria-label="Харанга нүүр хуудас">
+      <span>ХАРАНГА</span>
+      <small>MONGOLIAN ROCK LEGENDS</small>
+    </a>
+
+    <nav aria-label="Үндсэн цэс">
+      <a href="#home">Нүүр</a>
+      <a href="#about">Тухай</a>
+      <a href="#members">Гишүүд</a>
+      <a href="#albums">Цомгууд</a>
+      <a href="#video">Видео</a>
+    </nav>
+
+    <button id="themeToggle" class="theme-toggle"
+            type="button" aria-label="Өнгөний горим солих">
+      ☀ / ☾
+    </button>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <p class="eyebrow">MONGOLIAN ROCK • EST. 1989</p>
+        <h1>ХАРАНГА</h1>
+        <h2>Монголын рок хөгжмийн домог</h2>
+        <p>
+          Тайзнаас эхэлсэн түүх, үе үеэр дамжсан аялгуу,
+          мартагдашгүй дуунууд.
+        </p>
+
+        <a class="primary-btn" href="#albums">Цомгуудыг үзэх ↓</a>
+      </div>
+
+      <div class="hero-bottom">
+        <span>ROCK • PASSION • LEGACY</span>
+        <span>УЛААНБААТАР, МОНГОЛ</span>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about-section" id="about">
+      <div class="section-heading">
+        <p class="eyebrow">THE STORY</p>
+        <h2>Харанга хамтлаг</h2>
+        <p>Монголын рок хөгжмийн түүхийн нэгэн чухал хэсэг.</p>
+      </div>
+
+      <div class="about-content">
+        <div class="about-image">
+          <img src="img/background1.jpg"
+               alt="Харанга хамтлагийн хамтын зураг">
+        </div>
+
+        <div class="about-text">
+          <h3>Хөгжим бол зүгээр нэг аялгуу биш.</h3>
+          <p>
+            Харанга нь Монголын рок хөгжмийн урлагт өөрийн өнгө,
+            дуугаралт, тайзны хэв маягаар танигдсан хамтлаг юм.
+            Тэдний бүтээлүүд олон сонсогчийн дурсамжтай холбогддог.
+          </p>
+          <p>
+            Энэ веб хуудас нь хамтлагийн гишүүд, цомгууд болон
+            хөгжмийн ертөнцийг нэг дор танилцуулах зорилготой.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Members -->
+    <section class="members-section" id="members">
+      <div class="section-heading">
+        <p class="eyebrow">THE BAND</p>
+        <h2>Хамтлагийн гишүүд</h2>
+        <p>Карт дээр дарж гишүүдийн мэдээллийг үзээрэй.</p>
+      </div>
+
+      <div class="members-grid">
+
+        <article class="member-card" tabindex="0"
+                 aria-label="Чукагийн мэдээлэл">
+          <div class="member-card-inner">
+            <div class="member-front">
+              <img src="img/chuka.jpg" alt="Чука">
+              <div class="member-info">
+                <h3>Чука</h3>
+                <p>Аргил гитарчин, дуучин</p>
+              </div>
+              <span class="flip-hint">МЭДЭЭЛЭЛ ↻</span>
+            </div>
+            <div class="member-back">
+              <h3>Чука</h3>
+              <p>Цэрэндоржийн Чулуунбат нь 1957 оны 2-р сарын 16 нд төрсөн. 1989 оноос Харанга хамтлагийн аргил гитарчин хийж байгаа ба яруу найрагч, хөгжмийн зохиолч тэрээр Харанга хамтлагийн олон хит дуунуудыг бичиж байжээ. Мөн хамтлагтаа тоглохын сацуу өөрийн бие даасан ураг бүтээлийг хийж ирсэн.</p>
+              <span>КАРТЫГ ЭРГҮҮЛЭХ ↻</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="member-card" tabindex="0"
+                 aria-label="Энхманлайн мэдээлэл">
+          <div class="member-card-inner">
+            <div class="member-front">
+              <img src="img/enhmanlai.jpg" alt="Энхманлай">
+              <div class="member-info">
+                <h3>Энхманлай</h3>
+                <p>Гоцлол гитарчин, дуучин</p>
+              </div>
+              <span class="flip-hint">МЭДЭЭЛЭЛ ↻</span>
+            </div>
+            <div class="member-back">
+              <h3>Энхманлай</h3>
+              <p>Цэндсүрэнгийн Энхманлай нь 1656 оны 9-р сарын 27-нд төрсөн. 1989 оноос 2025онд насан эцэслэх хүртэлээ Харанга хамтлагийн гоцлол гитарчин, дуучин хийж байв . Суут хөгжмйн зохиолч, хөгжимчин гэгдэх тэрбээр Харанга хамтлагийн эхлэл болох Амьдрал дууны үг, аяыг зохиосон, хамтлагийн хэд хэдэн хит уран бүтээлийг зохиосон. Мөн өөрийн бие даасан хэд хэдэн уран бүтээлтэй.</p>
+              <span>КАРТЫГ ЭРГҮҮЛЭХ ↻</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="member-card" tabindex="0"
+                 aria-label="Лхагвасүрэнгийн мэдээлэл">
+          <div class="member-card-inner">
+            <div class="member-front">
+              <img src="img/lhagvasuren.jpg" alt="Лхагвасүрэн">
+              <div class="member-info">
+                <h3>Лхагвасүрэн</h3>
+                <p>Гоцлол дуучин</p>
+              </div>
+              <span class="flip-hint">МЭДЭЭЛЭЛ ↻</span>
+            </div>
+            <div class="member-back">
+              <h3>Лхагвасүрэн</h3>
+              <p>Хатанбаатарын Лхагвасүрэн нь 1966 оны 12-р сарын 21-нд төрсөн. 1989 оноос Харанга хамтлагт гоцлол дуучин хийж байгаа ба өөрийн бие даасан хэдэн цомогтой.</p>
+              <span>КАРТЫГ ЭРГҮҮЛЭХ ↻</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="member-card" tabindex="0"
+                 aria-label="Одсүрэнгийн мэдээлэл">
+          <div class="member-card-inner">
+            <div class="member-front">
+              <img src="img/odsuren.jpg" alt="Одсүрэн">
+              <div class="member-info">
+                <h3>Одсүрэн</h3>
+                <p>Гитарчин</p>
+              </div>
+              <span class="flip-hint">МЭДЭЭЛЭЛ ↻</span>
+            </div>
+            <div class="member-back">
+              <h3>Одсүрэн</h3>
+              <p>Яринпилийн Одсүрэн нь 1957 оны 4-р сарын 11-нд төрсөн. 1989 оноос одоог хүртэл Харанга хамтлагийн гитарчин хийж байгаа.
+              <span>КАРТЫГ ЭРГҮҮЛЭХ ↻</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="member-card" tabindex="0"
+                 aria-label="Пүүжээгийн мэдээлэл">
+          <div class="member-card-inner">
+            <div class="member-front">
+              <img src="img/puujee.jpg" alt="Пүүжээ">
+              <div class="member-info">
+                <h3>Пүүжээ</h3>
+                <p>Бөмбөрчин</p>
+              </div>
+              <span class="flip-hint">МЭДЭЭЛЭЛ ↻</span>
+            </div>
+            <div class="member-back">
+              <h3>Пүүжээ</h3>
+              <p>Нэмэхийн Пүрэвдаш нь 1958 оны 11-р сарын 21-нд төрсөн. 1989 оноос Харанга хамтлагийн бөмбөрчин хийж байгаа.</p>
+              <span>КАРТЫГ ЭРГҮҮЛЭХ ↻</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Albums -->
+    <section class="albums-section" id="albums">
+      <div class="section-heading">
+        <p class="eyebrow">HARANGA DISCOGRAPHY</p>
+        <h2>Цомгууд</h2>
+        <p>Цомог дээр дарж дууны жагсаалтыг үзээрэй.</p>
+      </div>
+
+      <div class="album-carousel" id="albumCarousel">
+        <button class="carousel-btn prev" id="prevAlbum"
+                type="button" aria-label="Өмнөх цомог">❮</button>
+
+        <div class="album-track" id="albumTrack">
+
+          <article class="album-card" tabindex="0">
+            <div class="album-card-inner">
+              <div class="album-front">
+                <img src="img/bestofharanga.jpg"
+                     alt="Best of Haranga цомгийн хавтас">
+                <div class="album-info">
+                  <h3>Best of Haranga</h3>
+                  <p>BEST OF HARANGA</p>
+                  <span>Дууны жагсаалт ↻</span>
+                </div>
+              </div>
+              <div class="album-back">
+                <h3>Best of Haranga</h3>
+                <p class="track-label">TRACKLIST</p>
+                <ol>
+                  <li>Гэгээ</li>
+                  <li>Дөрвөн улирал</li>
+                  <li>Энэ бол дурлал биш</li>
+                  <li>Манан</li>
+                  <li>Блюз</li>
+                  <li>Шивнээ</li>
+                  <li>Бүсгүйн заяа</li>
+                  <li>Хилэнцэт харц</li>
+                </ol>
+              </div>
+            </div>
+          </article>
+
+          <article class="album-card" tabindex="0">
+            <div class="album-card-inner">
+              <div class="album-front">
+                <img src="img/specialgold.jpg"
+                     alt="Special Version Gold цомгийн хавтас">
+                <div class="album-info">
+                  <h3>Special Version Gold</h3>
+                  <p>GOLD EDITION</p>
+                  <span>Дууны жагсаалт ↻</span>
+                </div>
+              </div>
+              <div class="album-back">
+                <h3>Special Version Gold</h3>
+                <p class="track-label">ALBUM DETAILS</p>
+                <ol>
+                  <li>Амьдрал</li>
+                  <li>Дөрвөн улирал</li>
+                  <li>Энэ бол дурлал биш</li>
+                  <li>Манан</li>
+                  <li>Ума хум</li>
+                  <li>Чи</li>
+                  <li>Гэгээ</li>
+                </ol>
+              </div>
+            </div>
+          </article>
+
+          <article class="album-card" tabindex="0">
+            <div class="album-card-inner">
+              <div class="album-front">
+                <img src="img/soundofcentury.jpg"
+                     alt="The Sound of the Century цомгийн хавтас">
+                <div class="album-info">
+                  <h3>The Sound of the Century</h3>
+                  <p>HARANGA</p>
+                  <span>Дууны жагсаалт ↻</span>
+                </div>
+              </div>
+              <div class="album-back">
+                <h3>The Sound of the Century</h3>
+                <p class="track-label">ALBUM DETAILS</p>
+                <ol>
+                  <li>Хилэнцэт харц</li>
+                  <li>Замд гаръя</li>
+                  <li>Москвагийн бороо</li>
+                  <li>Хайтан цэцэг</li>
+                  <li>Блюз</li>
+                  <li>Илүүдсэн дурлал</li>
+                  <li>Алсын гялбаа</li>
+                  <li>Зэрэглээ</li>
+                  <li>Зөвхөн Монголдоо</li>
+                  <li>Бодлын тэнгис</li>
+                  
+                </ol>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <button class="carousel-btn next" id="nextAlbum"
+                type="button" aria-label="Дараагийн цомог">❯</button>
+      </div>
+
+      <button id="rotationToggle" class="rotation-btn" type="button">
+        Pause rotation
+      </button>
+      
+    </section>
+
+    <!-- Video -->
+    <section class="video-section" id="video">
+      <div class="section-heading">
+        <p class="eyebrow">WATCH & LISTEN</p>
+        <h2>Хөгжмийн ертөнц</h2>
+        <p>Харанга хамтлагийн видео хэсэг.</p>
+      </div>
+
+      <div class="video-container">
+        <video controls preload="metadata" poster="img/background1.jpg">
+          <source src="video/clip.mp4" type="video/mp4">
+          <source src="video/clip.webm" type="video/webm">
+          <track src="video/clip.mn.vtt"
+                 kind="captions" srclang="mn"
+                 label="Монгол хадмал">
+          Таны хөтөч видео тоглуулах боломжгүй байна.
+        </video>
+      </div>
+      
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <a class="footer-logo" href="#home">ХАРАНГА</a>
+    <p>Монголын рок хөгжмийн домог.</p>
+
+    <div class="footer-links">
+      <a href="#about">Тухай</a>
+      <a href="#members">Гишүүд</a>
+      <a href="#albums">Цомгууд</a>
+    </div>
+
+    <p class="copyright">
+      &copy; 2026 Haranga Fan Website.
+    </p>
+  </footer>
+</body>
+</html>
