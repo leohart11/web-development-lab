@@ -1,0 +1,250 @@
+
+@use "../mixins" as *;
+
+section:not(.hero) {
+  padding: 86px 5%;
+  scroll-margin-top: 76px;
+}
+
+.section-heading {
+  max-width: 760px;
+  margin: 0 auto 42px;
+  text-align: center;
+
+  h2 {
+    margin: 0 0 12px;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.15;
+  }
+
+  > p:last-child {
+    color: var(--muted);
+  }
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--accent-bright);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 24px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  background: var(--accent);
+  color: white;
+  font-weight: 800;
+  transition: background var(--transition), transform var(--transition);
+
+  &:hover {
+    background: #b91f2b;
+    transform: translateY(-3px);
+  }
+}
+
+// Animations
+@keyframes heroEnter {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.members-grid .member-card,
+.album-track .album-card {
+  animation: cardEnter 600ms ease both;
+  animation-delay: calc(var(--i, 0) * 100ms);
+}
+
+// Responsive layout
+@include respond("desktop") {
+  .site-header {
+    gap: 14px;
+
+    nav {
+      gap: 14px;
+    }
+  }
+
+  .members-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .member-card {
+    height: 390px;
+  }
+}
+
+@include respond("tablet") {
+  .hero {
+    min-height: 620px;
+    padding: 80px 6% 100px;
+    background-position: 58% center;
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(90deg, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.42)),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.72), transparent);
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image img {
+    max-height: 360px;
+  }
+
+  .members-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .member-card {
+    height: 390px;
+  }
+
+  .album-carousel {
+    gap: 10px;
+  }
+
+  .album-track {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 390px;
+
+    .album-card {
+      display: none;
+      height: 440px;
+
+      &.is-active {
+        display: block;
+      }
+    }
+  }
+
+  section:not(.hero) {
+    padding: 68px 5%;
+  }
+}
+
+@include respond("mobile") {
+  .logo span,
+  .footer-logo {
+    font-size: 1.35rem;
+  }
+
+  .logo small {
+    font-size: 0.5rem;
+  }
+
+  .hero {
+    min-height: 570px;
+    padding: 70px 6% 100px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(3.6rem, 18vw, 5rem);
+  }
+
+  .hero-content > p:not(.eyebrow) {
+    font-size: 0.95rem;
+  }
+
+  .hero-bottom {
+    right: 6%;
+    left: 6%;
+    font-size: 0.57rem;
+    letter-spacing: 1px;
+  }
+
+  .members-grid {
+    grid-template-columns: 1fr;
+    max-width: none;
+  }
+
+  .member-card {
+    height: 420px;
+  }
+
+  .carousel-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .album-card {
+    height: 420px;
+  }
+
+  .album-back {
+    padding: 18px;
+  }
+
+  section:not(.hero) {
+    padding: 54px 16px;
+  }
+}
+
+// Accessibility
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .hero-content,
+  .members-grid .member-card,
+  .album-track .album-card {
+    animation: none;
+  }
+
+  .about-image:hover img,
+  .album-card:hover .album-front img,
+  .theme-toggle:hover,
+  .carousel-btn:hover,
+  .primary-btn:hover {
+    transform: none;
+  }
+}
+
+// Utility classes generated with @each
+$spaces: (
+  1: 4px,
+  2: 8px,
+  3: 12px,
+  4: 16px,
+  5: 24px
+);
+
+@each $name, $value in $spaces {
+  .gap-#{$name} {
+    gap: $value;
+  }
+}
