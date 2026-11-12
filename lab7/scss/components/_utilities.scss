@@ -1,0 +1,59 @@
+@use "../mixins" as *;
+@use "../tokens" as *;
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@for $i from 1 through 5 {
+  .gallery-card:nth-child(#{$i}) {
+    --i: #{$i};
+  }
+}
+
+@include respond(800px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .intro h1 {
+    font-size: 28px;
+  }
+}
+
+@include respond(500px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-card {
+    height: 280px;
+  }
+
+  .logo {
+    font-size: 15px;
+  }
+
+  .intro h1 {
+    font-size: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

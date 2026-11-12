@@ -1,0 +1,48 @@
+@use "../mixins" as *;
+@use "../functions" as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 7%;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: rem(20px);
+  font-weight: bold;
+}
+
+.theme-btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--primary);
+  color: contrast(#e63946);
+  font-size: rem(18px);
+  cursor: pointer;
+  transition: transform var(--transition);
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.intro {
+  padding: 65px 20px;
+  text-align: center;
+
+  h1 {
+    margin-bottom: 15px;
+    font-size: rem(36px);
+  }
+
+  p {
+    color: var(--muted);
+  }
+}

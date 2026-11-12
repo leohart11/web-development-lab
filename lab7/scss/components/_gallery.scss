@@ -1,0 +1,9 @@
+.gallery-section {
+  padding: 40px 7%;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}

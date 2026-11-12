@@ -1,0 +1,40 @@
+$colors: (
+  primary: #e63946,
+  background: #f4f4f4,
+  surface: #ffffff,
+  text: #222222,
+  muted: #777777
+);
+
+$radii: (
+  default: 12px
+);
+
+$breakpoints: (
+  tablet: 800px,
+  mobile: 500px
+);
+
+$transition: 0.4s ease;
+$shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
+
+:root {
+  @each $name, $value in $colors {
+    --#{$name}: #{$value};
+  }
+
+  @each $name, $value in $radii {
+    --radius: #{$value};
+  }
+
+  --transition: #{$transition};
+  --shadow: #{$shadow};
+}
+
+body.dark-mode {
+  --background: #151515;
+  --surface: #242424;
+  --text: #ffffff;
+  --muted: #bbbbbb;
+  --shadow: 0 5px 18px rgba(0, 0, 0, 0.4);
+}

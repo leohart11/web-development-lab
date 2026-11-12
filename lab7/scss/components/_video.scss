@@ -1,0 +1,17 @@
+.video-section,
+.map-section {
+  padding: 50px 7%;
+  text-align: center;
+}
+
+.video-section video {
+  width: 100%;
+  max-width: 650px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.map-section iframe {
+  max-width: 900px;
+  border-radius: var(--radius);
+}

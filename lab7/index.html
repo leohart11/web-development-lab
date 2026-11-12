@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Монгол орны үзэсгэлэнт газруудын зургийн цомог">
+    <title>Монгол орны зургийн цомог</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="spinner"></div>
+        <p>Уншиж байна...</p>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <svg width="40" height="40" viewBox="0 0 100 100"
+                 xmlns="http://www.w3.org/2000/svg" aria-label="Gallery logo" role="img">
+                <rect x="5" y="5" width="90" height="90" rx="18" fill="#e63946"/>
+                <circle cx="70" cy="30" r="10" fill="#fff"/>
+                <path d="M15 75 L40 40 L58 62 L70 48 L90 75 Z" fill="#fff"/>
+            </svg>
+            <span>PHOTO GALLERY</span>
+        </div>
+
+        <button id="themeToggle" class="theme-btn" aria-label="Dark mode солих">
+            🌙
+        </button>
+    </header>
+
+    <!-- Main -->
+    <main>
+
+        <section class="intro">
+            <h1>Монгол орны үзэсгэлэнт байгаль</h1>
+            <p>Монгол орны гайхамшигт газруудын гэрэл зургийн цомог</p>
+        </section>
+
+        <!-- Gallery -->
+        <section class="gallery-section" aria-labelledby="galleryTitle">
+            <h2 id="galleryTitle">Зургийн цомог</h2>
+
+            <div class="gallery">
+
+                <article class="gallery-card" tabindex="0">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="images/photo1.jpg" alt="Хөвсгөл нуур">
+                            <h3>Хөвсгөл нуур</h3>
+                        </div>
+                        <div class="card-back">
+                            <h3>Хөвсгөл нуур</h3>
+                            <p>Огноо: 2026.06.15</p>
+                            <p>Газар: Хөвсгөл аймаг</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="gallery-card" tabindex="0">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="images/photo2.jpg" alt="Говь цөл">
+                            <h3>Говь цөл</h3>
+                        </div>
+                        <div class="card-back">
+                            <h3>Говь цөл</h3>
+                            <p>Огноо: 2026.06.16</p>
+                            <p>Газар: Өмнөговь аймаг</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="gallery-card" tabindex="0">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="images/photo3.jpg" alt="Алтайн уулс">
+                            <h3>Алтайн уулс</h3>
+                        </div>
+                        <div class="card-back">
+                            <h3>Алтайн уулс</h3>
+                            <p>Огноо: 2026.06.17</p>
+                            <p>Газар: Баян-Өлгий аймаг</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="gallery-card" tabindex="0">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="images/photo4.jpg" alt="Тэрэлж">
+                            <h3>Тэрэлж</h3>
+                        </div>
+                        <div class="card-back">
+                            <h3>Тэрэлж</h3>
+                            <p>Огноо: 2026.06.18</p>
+                            <p>Газар: Улаанбаатар</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="gallery-card" tabindex="0">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="images/photo5.jpg" alt="Орхоны хүрхрээ">
+                            <h3>Орхоны хүрхрээ</h3>
+                        </div>
+                        <div class="card-back">
+                            <h3>Орхоны хүрхрээ</h3>
+                            <p>Огноо: 2026.06.19</p>
+                            <p>Газар: Өвөрхангай аймаг</p>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Video -->
+        <section class="video-section">
+            <h2>Богино бичлэг</h2>
+
+            <video controls width="600">
+    <source src="video/sample.mp4" type="video/mp4">
+
+    <track
+        src="./video/captions.vtt"
+        kind="captions"
+        srclang="mn"
+        label="Монгол хэл"
+        default>
+</video>
+        </section>
+
+        <!-- Map -->
+        <section class="map-section">
+            <h2>Байршил</h2>
+
+            <iframe
+                src="https://www.google.com/maps?q=Khuvsgul+Lake+Mongolia&output=embed"
+                width="100%"
+                height="350"
+                style="border:0"
+                loading="lazy"
+                title="Хөвсгөл нуурын газрын зураг"
+                allowfullscreen>
+            </iframe>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 Photo Gallery | Монгол орны үзэсгэлэнт байгаль</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

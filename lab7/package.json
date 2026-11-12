@@ -1,0 +1,17 @@
+{
+  "name": "lab7",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+  "sass": "sass --watch scss/main.scss:css/style.css",
+  "build": "sass --style=compressed scss/main.scss css/style.css"
+    },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "sass": "^1.108.2"
+  }
+}
